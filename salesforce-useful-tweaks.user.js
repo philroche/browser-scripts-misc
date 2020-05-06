@@ -607,6 +607,7 @@ if (document.getElementsByClassName('efdvJumpLinkBody').length > 0) {
     <li>&nbsp;<i class="fas fa-history"></i>&nbsp;&nbsp;(T) <a id="new_timecard" class="tbox_time" title="Add a new time card. Must be done by EOD!"
        href="https://${new_timecard_msg}" target="_blank">New time card</a></li>
     <li style="text-align: center;"><br />
+        <input type="text" value="${public_url}" id="public_url" style="width:100px"/>&nbsp;<i class="fas fa-clipboard" id="copy_public_url"></i><br /><br />
        <a title="Public URL to case" target="_blank" href="${public_url}"><i class="fas fa-link"></i></a>&nbsp;&nbsp;&nbsp;
        <a translate title="Translate highlighted text" target="_blank"><i class="fa fa-globe-europe fa-lg"></i></a>&nbsp;&nbsp;&nbsp;
        <a launchpad title="Search Launchpad" target="_blank"><i class="fa fa-bug fa-lg"></i></a>&nbsp;&nbsp;&nbsp;
@@ -618,6 +619,29 @@ if (document.getElementsByClassName('efdvJumpLinkBody').length > 0) {
     sidebar_html += create_link_list("Uploaded files", uploaded_files, -1);
 
     related_list_items[0].insertAdjacentHTML('beforeend', sidebar_html)
+    
+    var copy_public_url = document.querySelector('#copy_public_url');
+    copy_public_url.addEventListener('click', function(event) {
+        // Select the email link anchor text
+        var public_url_input = document.querySelector('#public_url');
+        var range = document.createRange();
+        range.selectNode(public_url_input);
+        window.getSelection().addRange(range);
+
+        try {
+            // Now that we've selected the anchor text, execute the copy command
+            var successful = document.execCommand('copy');
+            var msg = successful ? 'successful' : 'unsuccessful';
+            console.log('Copy email command was ' + msg);
+        } catch(err) {
+            console.log('Oops, unable to copy');
+        }
+
+        // Remove the selections - NOTE: Should use
+        // removeRange(range) when it is supported
+        window.getSelection().removeAllRanges();
+    });
+
 }
 
 // Create the collapsible 'sFTP uploads...' dialog actions
