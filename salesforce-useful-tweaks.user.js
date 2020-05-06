@@ -4,8 +4,8 @@
 // @description    Style and tweak Salesforce to be more productive for Engineers and Support
 // @include        /^https?://.*my.salesforce\.com/.*$/
 // @author         setuid@gmail.com
-// @updateUrl      https://raw.githubusercontent.com/desrod/browser-scripts-misc/master/salesforce-useful-tweaks.user.js
-// @downloadUrl    https://raw.githubusercontent.com/desrod/browser-scripts-misc/master/salesforce-useful-tweaks.user.js
+// @updateUrl      https://raw.githubusercontent.com/philroche/browser-scripts-misc/master/salesforce-useful-tweaks.user.js
+// @downloadUrl    https://raw.githubusercontent.com/philroche/browser-scripts-misc/master/salesforce-useful-tweaks.user.js
 // @require        https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js
 // @require        https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js
 // @resource       customCSS https://gist.githubusercontent.com/desrod/6c018a76e687b6d64321d9a0fd65c8b1/raw/sfui.css
